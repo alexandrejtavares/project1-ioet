@@ -1,5 +1,23 @@
 # ACME - Employee Pay Calculation
 
+## Introduction  
+
+This program calculates the payment of employees based on worked hours inputted in a txt file named *input_employees_worked_hours.txt*, following the defined format, as example below:
+
+EMPLOYEE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00
+
+The payment values table where we found the correspondent day and hour values was inputed into a json file named *working_hour_values.json* to avoid the need of code changes in case of  hour values changes.  
+
+## Running Instructions  
+
+First clone this repository as below:
+
+- git clone https://github.com/alexandrejtavares/project1-ioet.git
+
+After clone, open a Windows command promt or Linux/Unix shell with Python 3 installed and run the command below inside project directory:
+
+- python main.py
+
 ## Problem Description
 
 The company ACME offers their employees the flexibility to work the hours they want. They will pay for the hours worked based on the day of the week and time of day, according to the following table:
