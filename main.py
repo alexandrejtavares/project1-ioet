@@ -21,7 +21,7 @@ def read_txt_file(txt_file_name: str):
 
 def get_values_from_working_hours_file(file_name):
     working_hour_values = read_json_file(file_name)
-    logging.info(f"Reading values from working hours file: {file_name}")
+    logging.debug(f"Reading values from working hours file: {file_name}")
     return working_hour_values
 
 def get_values_from_employees_worked_hours_file(file_name):
@@ -84,4 +84,10 @@ employees_worked_hours_list = get_values_from_employees_worked_hours_file(employ
 employee_worked_hours_dict = get_employees_worked_hours_dict(employees_worked_hours_list)
 
 payment_obj = Payment(employee_worked_hours_dict)
-payment_obj.calculate_payment(working_hours_values_monday_friday_dict, working_hours_values_saturday_sunday_dict)
+
+dic_payment = payment_obj.calculate_payment(working_hours_values_monday_friday_dict, working_hours_values_saturday_sunday_dict)
+
+for item in dic_payment:
+    print(f"The amount to pay {item} is: {dic_payment[item]} USD")
+
+#"The amount to pay {str.upper(employee)} is: {self.employee_payment_total} USD\n"

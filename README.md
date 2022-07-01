@@ -16,7 +16,19 @@ First clone this repository as below:
 
 After clone, open a Windows command promt or Linux/Unix shell with Python 3 installed and run the command below inside project directory:
 
-- python main.py
+- python main.py  
+
+## Test Instructions  
+
+The program uses the PyTest framework to test the modules.  
+
+First install PyTest executing the command bellow:
+
+- pip install pytest
+
+Than, inside the project path execute the command:
+
+- pytest -v
 
 ## Problem Description
 
