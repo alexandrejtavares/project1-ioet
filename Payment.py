@@ -68,34 +68,3 @@ class Payment:
 
             ret[str.upper(employee)] = self.employee_payment_total
         return ret
-
-
-if __name__ == "__main__":
-
-    dic_days={}
-    dic_days["MO"] = {"start": "10:00", "end": "12:00"}
-    dic_days["TU"] = {"start": "10:00", "end": "12:00"}
-    dic_days["TH"] = {"start": "01:00", "end": "03:00"}
-    dic_days["SA"] = {"start": "14:00", "end": "18:00"}
-    dic_days["SU"] = {"start": "20:00", "end": "21:00"}       
-    
-    employee_worked_hour_dict = {}
-    employee_worked_hour_dict["RENE"] = dic_days
-
-    #employee_worked_hour_dict = json.loads(employee_worked_hour_str)
-
-    working_hours_values_saturday_sunday = []
-    working_hours_values_saturday_sunday=[
-            {"start": "00:01", "end": "09:00", "value": "30"},
-            {"start": "09:01", "end": "18:00", "value": "20"},
-            {"start": "18:01", "end": "00:00", "value": "25"}
-        ]
-
-    payment = Payment(employee_worked_hour_dict)
-
-    ret = payment.calculate_payment(working_hours_values_saturday_sunday, working_hours_values_saturday_sunday)
-    #print(payment.sum_payment(datetime.strptime("10:00", "%H:%M"), datetime.strptime("12:00", "%H:%M"), working_hours_values_saturday_sunday_dict))
-    print("Chegou")
-    print(employee_worked_hour_dict)
-    print(working_hours_values_saturday_sunday)
-    print (ret)
