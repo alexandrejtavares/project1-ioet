@@ -31,14 +31,3 @@ def test_calculate_payment():
 
 def test_sum_payment():
     assert payment.sum_payment(datetime.strptime("10:00", "%H:%M"), datetime.strptime("12:00", "%H:%M"), working_hours_values_saturday_sunday_dict) == 40.0
-
-if __name__ == "__main__": 
-    employee_worked_hour_dict = {}
-    employee_worked_hour_dict["RENE"] = dic_days
-
-    payment = Payment(employee_worked_hour_dict)
-
-    ret = payment.calculate_payment(working_hours_values_monday_friday_dict, working_hours_values_saturday_sunday_dict)
-    print(payment.sum_payment(datetime.strptime("10:00", "%H:%M"), datetime.strptime("12:00", "%H:%M"), working_hours_values_saturday_sunday_dict))
-    print (ret)
-
